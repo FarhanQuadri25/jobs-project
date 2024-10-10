@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: 'avante';
+  src: url('./avantgarde.woff') format('woff');
+  font-style: normal;
+}
