@@ -1,6 +1,28 @@
 {
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/static-build",
+        "config": {
+          "distDir": "build" 
+        }
+      }
+    ],
     "routes": [
-      { "src": "/api/jobs", "dest": "/api/jobs.js" }
-    ]
+      {
+        "src": "/api/jobs",
+        "dest": "/api/jobs.js" 
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/build/$1" 
+      }
+    ],
+    "static": {
+      "includeFiles": [
+        "jobs.json" 
+      ]
+    }
   }
   
